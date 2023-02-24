@@ -1,20 +1,16 @@
 import styled from "styled-components"
-import { Button } from "antd"
-import {Routes, Route} from 'react-router-dom';
+import Layout from "./layout/Layout";
 
 const Test = styled.div`
 color : blue;
 `
 
 
-function App() : JSX.Element {
+function App(){
   
   return (
     <div className="App">
-      <Routes>
-        <Route path="/detail" element={<div>디테일페이2지입니다</div>} />
-        <Route/>
-      </Routes>
+      <Layout/>
     </div>
   )
 }
