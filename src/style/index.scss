@@ -1,0 +1,36 @@
+body {
+    margin : 0;
+}
+
+.App {
+}
+
+a {
+    text-decoration: none;
+}
+
+@mixin center ($justify, $align, $direction){
+    display : flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+.center {
+    @include center(center, center, none)
+}
+.centerColumn {
+    @include center(center, center, column)
+}
+.spaceAround {
+    @include center(space-around, center, none)
+}
+.spaceAroundColumn {
+    @include center(space-around, center, column)
+}
+.spaceBetween {
+    @include center(space-between, center, none)
+}
+.spaceBetweenColumn {
+    @include center(space-between, center, Column)
+}
