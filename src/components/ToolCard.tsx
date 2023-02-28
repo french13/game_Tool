@@ -5,8 +5,8 @@ import {Row, Col} from 'antd';
 import ToolCardAnimation from './ToolCardAnimation';
 
 const Card = styled.div`
-width : 300px;
-height : 700px;
+width : 280px;
+height : 500px;
 perspective : 1400px;
 background
 `

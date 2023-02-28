@@ -1,8 +1,16 @@
 import React from 'react'
+import { ContainerImg, ContentBox } from '../style/styledComponents'
 
 const FixedTermItem = () => {
   return (
-    <div>FixedTermItem</div>
+    <>
+    <ContainerImg src="/image/timeitemBg.png" alt="mainPageBg" />
+    <ContentBox>
+
+      
+
+    </ContentBox>
+  </>
   )
 }
 

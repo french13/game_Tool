@@ -1,8 +1,16 @@
 import React from 'react'
+import { ContainerImg, ContentBox } from '../style/styledComponents'
 
 const Illust = () => {
   return (
-    <div>Illust</div>
+    <>
+    <ContainerImg src="/image/illustBg.png" alt="mainPageBg" />
+    <ContentBox>
+
+      
+
+    </ContentBox>
+  </>
   )
 }
 

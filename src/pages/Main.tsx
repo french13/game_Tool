@@ -6,20 +6,20 @@ import ToolCard from '../components/ToolCard'
 
 const ToolContainer = styled(ContentBox)`
 ${SpaceAround}
-padding-top : 150px;
+padding-top : 250px;
 `
 
 const Main = () => {
     const Tools = [
-        { id: 0, title: 'Todo', link: '/tools/todo', imgSrc : 'image/tool1.jpg' },
-        { id: 1, title: 'Time Item', link: '/tools/fixedtermitem',  imgSrc : 'image/tool2.jpg' },
-        { id: 2, title: 'Illust', link: '/tools/illust',  imgSrc : 'image/tool3.jpg' },
-        { id: 3, title: 'Comming Soon', link: '',  imgSrc : '' },
+        { id: 0, title: 'Todo', link: '/tools/todo', imgSrc : '/image/todoCard.png' },
+        { id: 1, title: 'Rhun', link: '/tools/rhun', imgSrc : '/image/rhunCard.png' },
+        { id: 2, title: 'Time Item', link: '/tools/fixedtermitem',  imgSrc : '/image/timeitemCard.png' },
+        { id: 3, title: 'Illust', link: '/tools/illust',  imgSrc : '/image/illustCard.png' },
     ]
 
     return (
         <>
-            <ContainerImg src="image/mainBg.png" alt="mainPageBg" />
+            <ContainerImg src="/image/mainBg.png" alt="mainPageBg" />
             <ToolContainer>
                 {
                     Tools.map((item, i) => {
