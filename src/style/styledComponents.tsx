@@ -17,7 +17,8 @@ z-index : -1;
 `
 
 const ContentBox = styled.div`
-padding-top : 80px;
+width : 100%;
+height : 100%;
 `
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const MenuItem = styled.div`
 height : 100%;
@@ -33,10 +34,12 @@ const MenuItems = (item: item) => {
  }
 
   return (
+    <Link to={item.link}>
     <MenuItem onMouseOver={underLineIn} onMouseOut={underLineOut} className='centerColumn'>
       {item.title}
       <UnderLine translateX={translateX} />
     </MenuItem>
+    </Link>
   )
 }
 

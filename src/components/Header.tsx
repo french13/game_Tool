@@ -46,7 +46,7 @@ const Header = () => {
   const [translateY, setTranslateY] = useState("-100%")
 
   const MenuItemArray = [
-    { id: 0, title: 'Tools', link: '/tools' },
+    { id: 0, title: 'Tools', link: '/' },
     { id: 1, title: 'Community', link: '/community' },
     { id: 2, title: 'Question', link: '/question' },
     { id: 3, title: 'Admin', link: '/admin' },
