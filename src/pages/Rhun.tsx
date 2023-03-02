@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import { ContainerImg, ContentBox } from '../style/styledComponents'
-import { Center } from '../style/Styled'
+import { Center, SecondColor } from '../style/Styled'
 import { Col, Row } from 'antd'
 import RhunDot from '../components/RhunDot'
+import { useState } from 'react'
+import RhunAb from '../components/RhunAb'
 
 const RhunContainer = styled.div`
 ${Center}
@@ -11,13 +13,14 @@ height : 100%;
 `
 
 const RhunContentBox = styled.div`
-border : solid 2px white;
 width : 70%;
 `
-
+const RhunImg = styled.img`
+border : solid 2px ${SecondColor};
+border-radius : 5px;
+`
 
 const Rhun = () => {
-
 
 
   return (
@@ -27,19 +30,14 @@ const Rhun = () => {
         <RhunContainer>
           <RhunContentBox>
             <Row>
-              <Col xs={20}>
-                게이지
+              <Col xs={24} md={11} style={{}}>
+                <RhunImg src='/image/rhun.png' width='100%' height='100%' />
+                <RhunDot />
               </Col>
-              <Col xs={4}>
-                <button>초기화</button>
+              <Col xs={24} md={2}>포인트게이지</Col>
+              <Col xs={24} md={11}>
+                <RhunAb/>
               </Col>
-            </Row>
-            <Row>
-              <Col xs={24} md={12} style={{position : 'relative'}}>
-                <img src="/image/rhun.png" alt="rhunImg" width='100%' />
-                <RhunDot/>
-              </Col>
-              <Col xs={24} md={12}>버프 내용</Col>
             </Row>
           </RhunContentBox>
 

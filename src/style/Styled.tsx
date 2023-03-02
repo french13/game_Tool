@@ -37,6 +37,20 @@ justify-content : space-around;
 align-items : center;
 flex-direction : column
 `
-
-
-export {Center, CenterColumn, SpaceAround, SpaceAroundColumn, SpaceBetween, SpaceBetweenColumn, Logo}
+const FirstColor = `
+rgb(173, 123, 233)
+`
+const SecondColor = `
+rgb(191, 220, 229)
+`
+const ThirdColor = `
+rgb(238, 238, 238)
+`
+const FirstFontSize = `
+`
+const SecondFontSize = `
+`
+const ThirdFontSize = `
+`
+export {Center, CenterColumn, SpaceAround, SpaceAroundColumn, SpaceBetween, 
+    SpaceBetweenColumn, Logo, FirstColor, SecondColor, ThirdColor, FirstFontSize, SecondFontSize, ThirdFontSize}

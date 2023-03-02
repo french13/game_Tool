@@ -1,47 +1,59 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'antd'
 import styled from 'styled-components'
 import { db } from '../firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 
 const RhunDotBox = styled.div`
 position : absolute;
 width : 100%;
 height : 100%;
 top : 0;
-border : solid 2px blue;
 display : flex;
-overflow : wrap;
+flex-wrap : wrap;
+`
+const DotDiv = styled.div`
+height : 16%;
+width : 10%;
+display : flex;
+justify-content : center;
+align-items : end;
 `
 
-const RhunDot = () => {
 
-    const getRhunData = async()=>{
-        const q = collection(db, 'illust');
-        const rhunData = await getDocs(q)
-        rhunData.forEach((doc)=>{
-          console.log(doc.data())
-        })
-      }
-    
-    
-      useEffect(()=>{
-        getRhunData()
-      }, [])
-    
+
+const RhunDot = () => {
+  const [rhunData, setRhunData] = useState([])
+
+  const getRhunData = async () => {
+    let box: any = []
+    const data = collection(db, 'illust');
+    const q = query(data, orderBy('date'))
+    const rhunData = await getDocs(q)
+    rhunData.forEach((doc) => {
+      box.push(doc.data())
+      console.log(doc.data())
+    })
+    setRhunData(box)
+  }
+
+
+  useEffect(() => {
+    getRhunData()
+  }, [])
+
   return (
     <RhunDotBox>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
-        <div style={{width : '10%', border : 'solid 2px red'}}>1</div>
+      {
+        rhunData.map((item: any) => {
+          return (
+            <DotDiv key={item.id} >
+              <input type='radio' />
+            </DotDiv>
+          )
+
+        })
+      }
     </RhunDotBox>
   )
 }
