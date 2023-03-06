@@ -3,8 +3,11 @@ import { auth, db } from '../firebase'
 import { createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from 'firebase/auth'
 import useInput from '../hooks/useInput'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+  const navigate = useNavigate()
+
   const [name, onChangeName] = useInput("")
   const [id, onChangeId] = useInput("")
   const [password, onChangePassword] = useInput("")
@@ -15,6 +18,7 @@ const Register = () => {
       const user = useCredential.user;
       updateDisplayName(user)
       addUsersCollection(user.uid)
+      navigate('/')
       console.log(user)
     })
   }

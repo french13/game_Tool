@@ -45,12 +45,14 @@ justify-content : left;
 const Header = () => {
   const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(false)
+  const [displayName, setDisplayName] = useState<string | null>("")
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("로그인 중" + user.displayName)
         setIsLogin(true)
+        setDisplayName(user.displayName)
       } else {
         navigate('/login')
         setIsLogin(false)
@@ -107,6 +109,7 @@ const Header = () => {
                   <span><Link to='/register'>Sign Up</Link></span>
                 </> :
                 <>
+                  <span>{displayName}</span>
                   <span onClick={logOut}>Logout</span>
                 </>
             }
