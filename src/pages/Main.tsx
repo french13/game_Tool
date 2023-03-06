@@ -6,6 +6,7 @@ import ToolCard from '../components/ToolCard'
 
 const ToolContainer = styled.div`
 padding-top : 200px;
+width : 100%;
 ${SpaceAround}
 `
 

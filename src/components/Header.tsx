@@ -1,9 +1,12 @@
 import { Row, Col } from 'antd'
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MenuItems from './MenuItems'
 import { Center, Logo } from '../style/Styled'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { auth } from '../firebase'
+import { signOut, onAuthStateChanged } from 'firebase/auth'
+
 
 const Navbar = styled.div`
 position : absolute;
@@ -21,19 +24,16 @@ background-color : rgba(0,0,0,0.5);
 transform : translateY(${props => props.translateY});
 transition : all 0.3s;
 `
-
 const SignWrapper = styled.div`
 ${Center}
 width : 100%;
 height : 100%;
 font-size : 20px;
 color : white;
-
 & > span {
   margin : 15px;
 }
 `
-
 const LogoWrapper = styled.div`
 width : 100%;
 height : 100%;
@@ -43,6 +43,21 @@ justify-content : left;
 `
 
 const Header = () => {
+  const navigate = useNavigate()
+  const [isLogin, setIsLogin] = useState(false)
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("로그인 중" + user.displayName)
+        setIsLogin(true)
+      } else {
+        navigate('/login')
+        setIsLogin(false)
+      }
+    })
+  }, [])
+
   const [translateY, setTranslateY] = useState("-100%")
 
   const MenuItemArray = [
@@ -57,6 +72,12 @@ const Header = () => {
   }
   const overLayOut = () => {
     setTranslateY('-100%')
+  }
+
+  const logOut = () => {
+    signOut(auth).then(() => {
+      alert('로그아웃 성공')
+    })
   }
 
   return (
@@ -79,8 +100,18 @@ const Header = () => {
         </Col>
         <Col xs={6} onMouseOver={overLayIn} onMouseOut={overLayOut}>
           <SignWrapper>
-            <span><Link to='/login'>Login</Link></span>
-            <span><Link to='/register'>Sign Up</Link></span>
+            {
+              isLogin == false ?
+                <>
+                  <span><Link to='/login'>Login</Link></span>
+                  <span><Link to='/register'>Sign Up</Link></span>
+                </> :
+                <>
+                  <span onClick={logOut}>Logout</span>
+                </>
+            }
+
+
           </SignWrapper>
         </Col>
       </Row>
