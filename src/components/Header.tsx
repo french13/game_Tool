@@ -46,6 +46,7 @@ const Header = () => {
   const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(false)
   const [displayName, setDisplayName] = useState<string | null>("")
+  const [translateY, setTranslateY] = useState("-100%")
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -60,7 +61,7 @@ const Header = () => {
     })
   }, [])
 
-  const [translateY, setTranslateY] = useState("-100%")
+
 
   const MenuItemArray = [
     { id: 0, title: 'Tools', link: '/' },
@@ -113,8 +114,6 @@ const Header = () => {
                   <span onClick={logOut}>Logout</span>
                 </>
             }
-
-
           </SignWrapper>
         </Col>
       </Row>
