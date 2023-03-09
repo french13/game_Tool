@@ -1,8 +1,13 @@
 import React from 'react'
 
-import { Input, Select, Button, List, Skeleton } from 'antd';
+import { Input, Select, Button, List} from 'antd';
+import styled from 'styled-components';
 
 const { Search } = Input;
+
+const IllustInfo = styled.div`
+`
+
 
 const list = [{
     id: '3',
@@ -40,7 +45,7 @@ const IllustResult = () => {
                     )}
                 />
             </div>
-            <div>
+            <IllustInfo >
                 <div>
                     <button>글쓰기</button>
                 </div>
@@ -49,7 +54,7 @@ const IllustResult = () => {
                     <span><button>삭제버튼</button></span>
                 </div>
                 <div>이거 도감 얻을려면 사실 다른 맵 가야 됩니다.</div>
-            </div>
+            </IllustInfo>
         </>
     )
 }
