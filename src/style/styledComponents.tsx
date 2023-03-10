@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Center, SpaceAroundColumn, FirstColor } from "./Styled";
+import { CenterColumn, SpaceAroundColumn, FirstColor } from "./Styled";
 import { Button, Form } from "antd";
 
 const PageContainer = styled.div`
@@ -19,20 +19,20 @@ z-index : -1;
 const ContentBox = styled.div`
 width : 100%;
 height : 100%;
-${Center}
+${CenterColumn};
 `
 const SignForm = styled(Form)`
 width : 600px;
-border-radius : 30px;
+border-radius : 15px;
 ${SpaceAroundColumn};
-padding : 15px;
+padding : 60px 20px;
 background-color : white;
 box-shadow: 0 0 12px 6px rgb(0 0 0 / 10%);
 `
 const SignInput = styled.input`
 width: 75%;
 height : 60px;
-border-radius : 50px;
+border-radius : 15px;
 margin : 10px 0;
 background-color : rgb(240,240,240);
 border : solid 2px lightgray;
@@ -43,7 +43,7 @@ font-size : 1.2rem;
 const SignButton = styled(Button)`
 width: 75%;
 height : 60px;
-border-radius : 50px;
+border-radius : 15px;
 margin : 10px 0;
 color : white;
 background-color : ${FirstColor};

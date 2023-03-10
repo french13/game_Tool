@@ -4,6 +4,12 @@ import { createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } fro
 import useInput from '../hooks/useInput'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
+
+const AuthBackground = styled(ContentBox)`
+background-color : rgb(60,60,60);
+`
+
 
 const Register = () => {
   const navigate = useNavigate()
@@ -47,9 +53,10 @@ const Register = () => {
 
   return (
     <>
-      <ContentBox>
+      <AuthBackground>
+      <h1 style={{color: 'white'}}>회원가입</h1>
         <SignForm onFinish={onSubmit}>
-          <h1>Sign Up</h1>
+         
           <SignInput onChange={onChangeName} type="text" placeholder='닉네임' />
           <SignInput onChange={onChangeId} type="text" placeholder='아이디' />
           <SignInput onChange={onChangePassword} type="text" placeholder='비밀번호' />
@@ -58,7 +65,7 @@ const Register = () => {
         </SignForm>
 
 
-      </ContentBox>
+      </AuthBackground>
     </>
   )
 }

@@ -65,9 +65,9 @@ const Header = () => {
 
   const MenuItemArray = [
     { id: 0, title: 'Tools', link: '/' },
-    { id: 1, title: 'Community', link: '/community' },
-    { id: 2, title: 'Question', link: '/question' },
-    { id: 3, title: 'Admin', link: '/admin' },
+    { id: 1, title: 'Game Tip', link: '/gametip' },
+    { id: 2, title: 'Inquiry', link: '/inquiry' },
+    { id: 3, title: 'My', link: '/my' },
   ]
 
   const overLayIn = () => {

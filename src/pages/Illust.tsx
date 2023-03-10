@@ -7,7 +7,10 @@ import IllustResult from '../components/IllustResult'
 
 const IllustContainer = styled(Row)`
 width : 80%;
-border : solid 2px blue;
+border : solid 4px rgb(153,102,051);
+border-radius : 10px;
+padding : 10px;
+background-color : rgb(30,30,30);
 `
 
 const Illust = () => {
@@ -23,8 +26,6 @@ const Illust = () => {
             <IllustResult />
           </Col>
         </IllustContainer>
-
-
       </ContentBox>
     </>
   )

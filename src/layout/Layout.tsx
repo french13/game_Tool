@@ -1,11 +1,11 @@
 import {Routes, Route} from 'react-router-dom'
-import Admin from '../pages/Admin'
-import Community from '../pages/Community'
+import My from '../pages/My'
+import GameTip from '../pages/GameTip'
 import FixedTermItem from '../pages/FixedTermItem'
 import Illust from '../pages/Illust'
 import Login from '../pages/Login'
 import Main from '../pages/Main'
-import Question from '../pages/Question'
+import Inquiry from '../pages/Inquiry'
 import Register from '../pages/Register'
 import Rhun from '../pages/Rhun'
 import Todo from '../pages/Todo'
@@ -24,9 +24,9 @@ const Layout = () => {
     <Route path='tools/rhun' element={<Rhun/>}/>
     <Route path='tools/fixedtermitem' element={<FixedTermItem/>}/>
     <Route path='tools/illust' element={<Illust/>}/>
-    <Route path='community' element={<Community/>}/>
-    <Route path='question' element={<Question/>}/>
-    <Route path='admin' element={<Admin/>}/>
+    <Route path='gametip' element={<GameTip/>}/>
+    <Route path='inquiry' element={<Inquiry/>}/>
+    <Route path='my' element={<My/>}/>
    </Routes>
    </PageContainer>
   )
