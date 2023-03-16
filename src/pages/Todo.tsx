@@ -94,7 +94,6 @@ const Todo = () => {
             </TodoItemBox>
           </div>
         </TodoContainer>
-
       </ContentBox>
     </>
   )
