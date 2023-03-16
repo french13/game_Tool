@@ -46,6 +46,12 @@ rgb(191, 220, 229)
 const ThirdColor = `
 rgb(238, 238, 238)
 `
+const MainColor = `
+rgb(255,204,051)
+`
+
+
+
 const FirstFontSize = `
 `
 const SecondFontSize = `
@@ -53,4 +59,4 @@ const SecondFontSize = `
 const ThirdFontSize = `
 `
 export {Center, CenterColumn, SpaceAround, SpaceAroundColumn, SpaceBetween, 
-    SpaceBetweenColumn, Logo, FirstColor, SecondColor, ThirdColor, FirstFontSize, SecondFontSize, ThirdFontSize}
+    SpaceBetweenColumn, Logo, FirstColor, SecondColor, ThirdColor, FirstFontSize, SecondFontSize, ThirdFontSize, MainColor}

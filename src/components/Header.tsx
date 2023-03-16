@@ -64,10 +64,10 @@ const Header = () => {
 
 
   const MenuItemArray = [
-    { id: 0, title: 'Tools', link: '/' },
-    { id: 1, title: 'Game Tip', link: '/gametip' },
-    { id: 2, title: 'Inquiry', link: '/inquiry' },
-    { id: 3, title: 'My', link: '/my' },
+    { id: 0, title: '게임 툴', link: '/' },
+    { id: 1, title: '팁 게시판', link: '/gametip' },
+    { id: 2, title: '문의하기', link: '/inquiry' },
+    { id: 3, title: '내 정보', link: '/my' },
   ]
 
   const overLayIn = () => {

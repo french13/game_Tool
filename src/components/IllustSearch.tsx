@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input, Select, Button } from 'antd';
 import styled from 'styled-components';
-import { SpaceBetween } from '../style/Styled';
+import { SpaceBetween, MainColor } from '../style/Styled';
 import { PlusCircleOutlined } from '@ant-design/icons'
 
 const SelectStyle = styled(Select)`
@@ -15,8 +15,8 @@ background : black;
 const ButtonStyle = styled(Button)`
 border-radius : 50px;
 width : 20%;
-border : solid 2px rgb(255,204,051);
-color : rgb(255,204,051);
+border : solid 2px ${MainColor};
+color : ${MainColor};
 font-weight : 800;
 background : black;
 `
@@ -34,7 +34,7 @@ ${SpaceBetween}
 width : 92%;
 padding : 5px;
 margin : 5px 0;
-border : solid 2px rgb(255,204,051);
+border : solid 2px ${MainColor};
 border-radius : 5px;
 color : white;
 `
